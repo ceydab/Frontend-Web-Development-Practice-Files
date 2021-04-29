@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>findingemail</title>
+<link rel="stylesheet" href="finding.css">
+</head>
+
+<body>
+	<div id="content">
+	Just as importantly, a period of incubation allows us to gain some psychological distance from our task. When you spend a long time focusing on one problem, you can become fixated on certain obvious solutions. A period of incubation should help you to widen your mental focus so that you can make connections and come back to the problem with a new perspective. Intriguingly, incubation may work best when your mind is distracted with an engaging but relatively easy task, so that it is given just enough room to wander freely. 
+		<br>
+		<br>
+	https://www.bbc.com/worklife/article/20210319-why-procrastination-can-help-fuel-creativity
+	</div> <br>
+	
+	<button class= "searcher" onClick = "search()">Search for links</button> <br> <br>
+	
+	<div id="resulting"></div>
+	
+	<script type="text/javascript" language="javascript">
+		function search(){
+	var getthecontent = document.getElementById("content").innerHTML;
+	var searchfor = /[a-z]+\.+[a-z]+\.+[a-z0-9\/\-\.]+/g;
+	var whatisobtained = getthecontent.match(searchfor);
+	document.getElementById("resulting").innerHTML = "Number of links = " + whatisobtained.length;
+	var newline = document.createElement("BR")
+	var linkname = document.createTextNode("Links: ");
+	var obtained = document.createTextNode(whatisobtained);
+	document.getElementById("resulting").appendChild(newline);
+	document.getElementById("resulting").appendChild(linkname);
+	document.getElementById("resulting").appendChild(obtained);
+		}
+		
+	
+	
+	</script>
+</body>
+</html>

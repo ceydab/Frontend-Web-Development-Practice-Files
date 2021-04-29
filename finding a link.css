@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+html
+{
+	padding: 20px;
+	background-color: darkgreen;
+}
+#content
+{
+	border-style: dotted;
+	border-style: double;
+	border-color: aqua;
+	padding: 15px;
+	margin: 20px;
+	color: aliceblue;
+	font-size: 20px;
+	word-spacing: 5px;
+}
+.searcher
+{
+	margin-left: 550px;
+}
+#resulting
+{
+	margin-left: 35px;
+	font-size: 20px;
+	word-spacing: 5px;
+	color: aliceblue;
+}
