@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Applications with window</title>
+	<link rel="stylesheet" type="text/css" href="windowapplications.css"/>
+</head>
+
+<body>
+	
+	<img id="threestars" alt="stars" src="Asset 2.png" title="stars"/>
+	<button id="btn" onClick="javascript:goesto('https://www.reuters.com/', 500, 500)" />See the News
+	
+	
+	<script type="text/javascript" language="javascript">
+	
+		
+	function goesto(address, width, height) {
+		var reqwidth = parseInt(screen.availWidth/2 - width/2);
+		var reqheight = parseInt(screen.availHeight/2 - height/2);
+		var sizestyle = "width=" + width + ",height=" + height + ",left=" + reqwidth + ",top=" +reqheight;
+		window.open(address, "Reuters", sizestyle);
+		}
+		
+	
+		var follower = document.getElementById("threestars");
+		window.onmousemove = function (event){
+			follower.style.left = event.clientX + 10 + "px";
+			follower.style.top = event.clientY + 10 +"px";
+	
+	}
+	
+	</script>
+	
+</body>
+</html>
