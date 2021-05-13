@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#slider{
+	background-color:black;
+	height: 75px;
+	line-height: 75px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 25px;
+	color: black;
+}
+
+.centralize{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+	width: 100%;
+}

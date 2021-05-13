@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+	<link type="text/css" rel="stylesheet" href="slidechange.css"/>
+</head>
+
+<body onLoad="stopperout()">
+	
+<div class="centralize"><marquee id="slider"  onMouseOver="this.stop()" onMouseOut="this.start()">show must go on!</marquee></div> 
+	<script type="text/javascript" language="javascript">
+		
+	function stopperout(){
+		setInterval("stopper()", 12000);
+	}
+		function stopper(){
+		document.getElementById("slider").stop();
+	}
+		
+			var colors = ["yellow", "red", "green", "blue"];
+			var i = 0;
+		function colorchanger(){
+			if(i < colors.length){
+				document.getElementById("slider").style.color = colors[i];	
+				i++; 
+				setInterval("colorchanger()", 500);
+				}
+			else{
+				i = 0;
+			}
+		}
+	
+		colorchanger();
+	
+	</script>
+</body>
+</html>
