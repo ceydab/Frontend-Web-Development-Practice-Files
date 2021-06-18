@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>play with numbers</title>
+</head>
+
+<body>
+<div class="paddingcheck" style="margin-top: 200px; margin-left: 200px">
+	<span id="usedletters" style="color: red; font-size: 13px; ">0</span>
+<textarea id="area1" style="height=100px; width=100px"></textarea> 
+	<span id="leftletters" style="color: red; font-size: 13px">20</span>
+	<br><br><input type="button" value="change max length" onClick="changer()">
+</div>
+
+<script type="text/javascript" language="javascript">
+	console.time('time');
+		document.addEventListener("keypress", count);
+	function count(){
+		document.getElementById("area1").value = document.getElementById("area1").value.substr(0 , 19);
+		var numbercollector = document.getElementById("area1").value.length;
+		document.getElementById("usedletters").innerHTML = 1 + numbercollector ;
+	    document.getElementById("leftletters").innerHTML = 19 - numbercollector;
+	}
+	
+	function changer(){
+		var numbercollector = document.getElementById("area1").value.length = 0;
+		document.getElementById("area1").value= "";
+		var getnumber = Math.floor(Math.random() * 20);
+		document.getElementById("leftletters").innerHTML = getnumber;
+		document.getElementById("usedletters").innerHTML = 0;
+		document.addEventListener("keypress", counter);
+		
+		function counter(){
+		document.getElementById("area1").value = document.getElementById("area1").value.substr(0 , getnumber);
+		var numbercollector = document.getElementById("area1").value.length;
+		document.getElementById("usedletters").innerHTML = numbercollector +1 ;
+		document.getElementById("leftletters").innerHTML = getnumber - numbercollector;
+			let message = "to be used ${numbercollector}";
+			console.log(message);
+			
+	}
+		return;
+	}
+	
+	
+	console.timeEnd('time');
+	
+	</script>
+	</body>
+</html>
