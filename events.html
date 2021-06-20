@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+</head>
+
+<body>
+	<div id="container" style="background-color: antiquewhite; margin: auto; height: 100%; width: 100%; position: absolute" >
+		<span id="finder" style="display: block; text-align: center; padding-top: 50px"></span>
+		<header id="addloc" style="text-align: center; padding-top: 150px"></header>
+	<input id="controller" type="button" value="click me" style="padding: 50px; display: block; margin-right: auto; margin-left: auto; margin-top: 20px; margin-bottom: 50px; cursor: pointer">
+	</div>
+	
+	<script type="text/javascript" language="javascript">
+		var colors = new Array ("lightblue", "lightgreen", "light", "lightyellow", "white")
+	
+		var generalvariable = document.getElementById("controller");
+		var getdiv = document.getElementById("container");
+		
+		getdiv.addEventListener('mouseover', hovering);
+		function hovering(e){
+			document.getElementById("finder").textContent = "color change";
+			document.getElementById("finder").style.color= "red";
+
+			var getano = (Math.floor(Math.random()*4));
+			getdiv.style.backgroundColor = colors[getano];
+			
+			//e.preventDefault();
+			console.log(e.type);
+		}
+	
+		getdiv.addEventListener('mouseleave', leaving);
+		function leaving(e) {
+			document.getElementById("finder").textContent = " ";
+			getdiv.style.backgroundColor = "antiquewhite";
+			//e.preventDefault();
+			console.log(e.type);
+		}
+		generalvariable.addEventListener('mousemove', moving);
+		function moving(e) {
+			addloc.textContent = "x = " + e.offsetX + " y = " + e.offsetY;
+
+			//e.preventDefault();
+			console.log(e.type);
+		}
+		generalvariable.addEventListener('click', clicking);
+		function clicking(e) {
+			getdiv.removeEventListener('mouseleave', leaving);
+			getdiv.removeEventListener('mouseover', hovering);
+            document.getElementById("finder").textContent = " ";
+			var answer = confirm("Are you human?");
+			if(answer == true){
+				generalvariable.value = "Prove it!";
+			   }
+			generalvariable.removeEventListener('click', clicking);
+			getdiv.addEventListener('mouseenter', entering2);
+			
+		function entering2(e) {
+			var getano = (Math.floor(Math.random()*4));
+			getdiv.style.backgroundColor = colors[getano];		
+			//e.preventDefault();
+			console.log(e.type);
+		}
+			//e.preventDefault();
+			console.log(e.type);
+		}
+		
+		
+
+		
+		generalvariable.addEventListener('mouseup', upping);
+		function upping(e) {
+			var sec = document.createElement("canvas");
+			sec.setAttribute("id","secure");
+			sec.setAttribute("width", "150px");
+			sec.setAttribute("height", "50px");
+			sec.setAttribute("display", "block");
+
+			sec.style = "position: absolute; left: 0px; right: 0px;  margin-left: auto; margin-right: auto"; 
+
+			var ctx = sec.getContext("2d");
+			getdiv.appendChild(sec);
+			
+			
+			var texti	=	"";
+
+	        for(var i = 0; i<6; i++){
+		          var randno	=	Math.random();
+		       if(Math.round(randno) == 0){
+			        texti	+=	String.fromCharCode(48+9 * Math.random());
+		      }else{
+			        texti 	+=	String.fromCharCode(65+25 * Math.random());
+		           }
+	          }
+			
+			ctx.fillStyle 	=	"red";
+			ctx.fillRect(0, 0, 150, 50);
+			
+
+        	ctx.font 	=	"30px calibri";
+        	ctx.strokeText(texti, 24, 34);
+			ctx.textAlign = "center";
+			
+			var seccheck = document.createElement("input");
+			seccheck.setAttribute("type","text");
+			seccheck.style = "display:block; margin-left:auto; margin-right:auto; margin-top:120px; width:250px;"
+			seccheck.setAttribute("id", "secchecker");
+
+			getdiv.appendChild(seccheck);
+			
+			seccheck.addEventListener("focus",focusing);
+			function focusing(){
+				seccheck.setAttribute("placeholder", "enter the captcha");
+							seccheck.addEventListener("blur",bluring);
+			}
+			
+
+			function bluring(e){
+				confirm("Are you not human? :o");
+				console.log(e.type);
+				seccheck.removeEventListener("blur",bluring);
+			}
+			
+            seccheck.addEventListener("paste",pasting);
+			function pasting(){
+				document.getElementById("secchecker").value = " ";
+				window.setTimeout(function(){
+						alert("Where did you get that???");
+					document.getElementById("secchecker").value = " ";
+				}, 1000);
+			seccheck.removeEventListener("blur",bluring);
+			seccheck.removeEventListener("paste",pasting);
+					console.log(e.type);
+			}
+			
+			seccheck.addEventListener("copy", stealing);
+			seccheck.addEventListener("cut", stealing);
+			function stealing(e){
+				document.getElementById("secchecker").value = " ";
+				document.getElementById("secchecker").value = "What are you gonna do to me???";
+					console.log(e.type);
+			}
+
+			seccheck.addEventListener("input", inputcheck);
+			function inputcheck(){
+			var seccheckvar = document.getElementById("secchecker").value;
+				
+				if(seccheckvar == texti){
+					generalvariable.value = "double click";
+					generalvariable.addEventListener('dblclick', dblclicking);
+		            function dblclicking(e) {
+			//e.preventDefault();
+						getdiv.removeChild(secure);
+						getdiv.removeChild(secchecker);
+						generalvariable.removeEventListener('mouseup', upping);
+						generalvariable.removeEventListener('click', clicking);
+						getdiv.removeEventListener('mouseleave', leaving);
+						getdiv.removeEventListener('mouseover', hovering);
+						document.getElementById("finder").textContent = "Congrats, you are human! Or you tricked us :("
+
+						getdiv.addEventListener('mouseenter', entering2);
+			
+					function entering2(e) {
+							var getano = (Math.floor(Math.random()*4));
+							getdiv.style.backgroundColor = colors[getano];		
+							//e.preventDefault();
+							console.log(e.type);
+						}
+							getdiv.removeChild(controller);
+							getdiv.removeChild(addloc);
+							//getdiv.removeChild(finder);
+
+							console.log(e.type);
+						}
+				}
+				else{
+					seccheck.setAttribute("placeholder", "try again");
+				}
+				seccheck.removeEventListener("blur",bluring);
+				}
+			seccheck.removeEventListener("blur",bluring);
+			generalvariable.removeEventListener('mouseup', upping);
+			
+			//e.preventDefault();
+			console.log(e.type);
+		}
+		
+
+		
+	</script>
+</body>
+</html>
