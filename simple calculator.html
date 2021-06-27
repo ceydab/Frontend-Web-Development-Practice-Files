@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple Calculator</title>
+	<style>
+		.number{
+			width: 100%;
+		}
+		.operation{
+			width: 100%;
+		}
+		body{
+			text-align: center;
+		}
+		form{
+			display: inline-block;
+			margin-top: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<form name="calculator">
+		<table>
+	<tr>
+		<th colspan="5"><input type="text" name="screen">
+			</th>
+	</tr>
+  
+    <tr id="firstline" >
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='1'">1</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='2'">2</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='3'">3</button></td>
+      <td><button type="button" class="operation" style="background-color:orangered">DEL</button></td>
+	  <td><button type="button" class="operation" style="background-color: orangered" onClick="document.calculator.screen.value='' ">AC</button></td>
+    </tr>
+	 <tr id="secondline" >
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='4'">4</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='5'">5</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='6'">6</button></td>
+      <td><button type="button" class="operation" onClick="document.calculator.screen.value+='*'">*</button></td>
+	  <td><button type="button" class="operation" onClick="document.calculator.screen.value+='/'">/</button></td>
+    </tr>
+	<tr id="thirdline" >
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='7'">7</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='8'">8</button></td>
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='9'">9</button></td>
+      <td><button type="button" class="operation" onClick="document.calculator.screen.value+='+'">+</button></td>
+	  <td><button type="button" class="operation" onClick="document.calculator.screen.value+='-'">-</button></td>
+    </tr>
+	<tr id="fourthline" >
+      <td><button type="button" class="number" onClick="document.calculator.screen.value+='.'">.</button></td>
+	  <td><button type="button" class="number" onClick="document.calculator.screen.value+='0'">0</button></td>
+	  <td><button type="button" class="operation" onClick="document.calculator.screen.value= eval(document.calculator.screen.value)">=</button></td>
+      <td><button type="button" class="operation" onClick="document.calculator.screen.value+='('">(</button></td>
+      <td><button type="button" class="operation" onClick="document.calculator.screen.value+=')'">)</button></td>
+	  
+    </tr>
+ 
+
+     </table>
+	</form>
+	
+	<script type="text/javascript" language="javascript">
+	</script>
+</body>
+</html>
