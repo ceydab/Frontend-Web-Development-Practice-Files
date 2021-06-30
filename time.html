@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Time</title>
+</head>
+
+<body>
+	<span id="hourplayer" style="display: block; text-align: center; font-size: 30px;  text-decoration-style: double; text-decoration-color: lightgray; text-decoration: underline overline; padding: 200px;"></span>
+	
+	<script type="text/javascript" language="javascript">
+	
+		
+		function fixtime(timeelemenets){
+			var stringize = timeelemenets.toString();
+			var getlength = stringize.length;
+			if (getlength===1){
+				return "0" + stringize;
+				}
+			else{
+				return stringize;
+				}
+		}
+		
+		
+		function updatetime(){
+			var whattime = new Date();
+			var whathour = whattime.getHours();
+			var whatmin = whattime.getMinutes();
+			var whatsec = whattime.getSeconds();
+		   document.getElementById("hourplayer").innerHTML = fixtime(whathour) + ":" + fixtime(whatmin) + ":" + fixtime(whatsec);
+		}
+		
+		setInterval(updatetime, 1000);
+	
+	</script>
+	
+</body>
+</html>
