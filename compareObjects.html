@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>compareObjects</title>
+</head>
+
+<body>
+
+	
+<script type="text/javascript" language="javascript">	
+	
+	var objebir = {
+    'name' : '',
+    'age' : '22'
+}
+
+var objeiki = {
+    'name' : 'emre',
+    'age' : '22'
+}
+		
+var	objeuc = {
+    'name' : 'canan',
+    'age' : '22'
+}
+
+var	objeget = {
+    'name' : 'canan',
+    'age' : ''
+}
+	
+	
+var humans = new Array(objebir, objeiki, objeuc)
+
+
+		i = 0
+	function compare(){
+			
+		while (i<humans.length){
+			if(humans[i].name == objeget.name || objeget.name == "" || humans[i].name ==""){
+				if(humans[i].age == objeget.age || humans[i].age == "" || objeget.age == ""){
+					console.log("match " + humans[i].name)
+				}
+				else{
+					console.log("non")
+				}
+			}
+			else{
+				console.log("non")	
+			}
+			
+			i++
+		}
+	}
+compare()
+	
+	</script>
+	
+	
+	
+	</body>
+</html>
